@@ -7,13 +7,18 @@
 目录
 
 一准备工作:
-1.环境搭建
+1. 环境搭建
 QEMU:https://www.qemu.org/
 
+2. NASM
+x86 汇编编译器
+
+3. dd
 
 nasm helloOS.s -o boot.bin
 
 dd if=boot.bin of=boot.img bs=512 count=1
+
 qemu-system-i386 -drive file=boot.img,format=raw,if=floppy
 
 
