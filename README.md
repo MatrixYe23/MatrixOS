@@ -11,3 +11,9 @@
 QEMU:https://www.qemu.org/
 
 
+nasm helloOS.s -o boot.bin
+
+dd if=boot.bin of=boot.img bs=512 count=1
+qemu-system-i386 -drive file=boot.img,format=raw,if=floppy
+
+
